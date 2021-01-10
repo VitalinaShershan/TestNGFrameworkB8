@@ -8,7 +8,7 @@ import org.openqa.selenium.support.PageFactory;
 public class LoginPage extends CommonMethods {
 
     @FindBy(id = "txtUsername")
-    public WebElement username;
+    public WebElement usernameBox;
 
     @FindBy(xpath = "//input[@id='txtPassword']")
     public WebElement passwordBox;
@@ -18,5 +18,11 @@ public class LoginPage extends CommonMethods {
 
     public LoginPage() {
         PageFactory.initElements(driver, this);
+    }
+
+    public void login(String username, String password){
+        sendText(usernameBox,username);
+        sendText(passwordBox, password);
+        click(loginBtn);
     }
 }
