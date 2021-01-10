@@ -9,7 +9,7 @@ import org.openqa.selenium.support.PageFactory;
 public class DashboardPage{
 
     @FindBy(id = "welcome")
-    WebElement welcomeMessage;
+    public WebElement welcomeMessage;
 
     @FindBy(linkText = "PIM")
     public WebElement PIMButton;

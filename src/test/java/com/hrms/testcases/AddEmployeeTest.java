@@ -9,7 +9,7 @@ import org.testng.annotations.Test;
 
 public class AddEmployeeTest extends CommonMethods {
 
-    @Test
+    @Test(groups = "smoke")
     public void addEmployee() {
         //login to the hrms
         LoginPage login = new LoginPage();
@@ -24,7 +24,5 @@ public class AddEmployeeTest extends CommonMethods {
         sendText(addEmp.lastNameTextbox, "Denchuk");
         click(addEmp.saveButton);
         //validation
-        //assertion
     }
-
 }
