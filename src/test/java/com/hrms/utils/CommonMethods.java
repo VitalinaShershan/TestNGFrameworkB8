@@ -1,9 +1,8 @@
 package com.hrms.utils;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -12,6 +11,10 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
+import java.io.File;
+import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.concurrent.TimeUnit;
 
 public class CommonMethods {
@@ -101,7 +104,32 @@ public class CommonMethods {
      * @param element
      */
     public static void jsClick(WebElement element){
-        getJSExecutor().executeScript("arguments[0].click", element);
+        getJSExecutor().executeScript("arguments[0].click();", element);
     }
 
+    /**
+     *
+     * @param fileName
+     */
+    public static void takeScreenshot(String fileName){
+        TakesScreenshot ts=(TakesScreenshot)driver;
+        File sourceFile = ts.getScreenshotAs(OutputType.FILE);
+
+        try {
+            FileUtils.copyFile(sourceFile, new File(Constants.SCREENSHOT_FILEPATH + fileName + getTimeStamp("yyyy-MM-dd-HH-mm-ss")+".png"));
+        }catch (IOException e){
+            e.printStackTrace();
+        }
+    }
+
+    /**
+     *
+     * @param pattern
+     * @return
+     */
+    public static String getTimeStamp(String pattern){
+            Date date=new Date();
+            SimpleDateFormat sdf=new SimpleDateFormat(pattern);
+           return sdf.format(date);
+    }
 }

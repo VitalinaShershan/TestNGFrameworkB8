@@ -59,7 +59,10 @@ public class ExcelReading {
         return sheet.getRow(rowIndex).getCell(colIndex).toString();
     }
 
-    public static List<Map<String, String>> excelIntoListMap() {
+    public static List<Map<String, String>> excelIntoListMap(String filePath, String sheetName) {
+
+        openExcel(filePath);
+        getSheet(sheetName);
 
         List<Map<String, String>> listData = new ArrayList();
 

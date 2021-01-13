@@ -8,6 +8,9 @@ import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 public class LoginTest extends CommonMethods {
 
     @Test(groups = "smoke")
@@ -39,7 +42,7 @@ public class LoginTest extends CommonMethods {
                 {"James", "123!", "Invalid credentials"},
                 {"Admin1", "Syntax123!", "Invalid credentials"},
                 {"James", "", "Password cannot be empty"},
-                {"", "Syntax123!", "Username cannot be empty"}
+                {"", "Syntax123!", "Username cannot be emptys"}
         };
         return data;
     }

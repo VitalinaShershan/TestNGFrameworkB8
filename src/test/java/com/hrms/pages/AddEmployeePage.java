@@ -26,6 +26,21 @@ public class AddEmployeePage {
     @FindBy(id = "chkLogin")
     public WebElement createLoginCheckbox;
 
+    @FindBy (id = "photofile")
+    public WebElement photograph;
+
+    @FindBy (id = "chkLogin")
+    public WebElement createLoginDetails;
+
+    @FindBy (id = "user_name")
+    public WebElement usernameCreate;
+
+    @FindBy (id = "user_password")
+    public WebElement userPassword;
+
+    @FindBy (id = "re_password")
+    public WebElement rePassword;
+
     public AddEmployeePage(WebDriver driver) {
         PageFactory.initElements(driver, this);
     }
