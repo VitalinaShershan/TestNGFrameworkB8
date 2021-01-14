@@ -7,6 +7,7 @@ import com.hrms.utils.Constants;
 import com.hrms.utils.ExcelReading;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
@@ -32,7 +33,7 @@ public class AddEmployeeTest extends CommonMethods {
         sendText(addEmp.firstNameTextBox, "Daria");
         sendText(addEmp.lastNameTextbox, "Denchuk");
         click(addEmp.saveButton);
-        //validation
+        //Assert.assertEquals();
     }
 
    //@Test(groups = "regression")

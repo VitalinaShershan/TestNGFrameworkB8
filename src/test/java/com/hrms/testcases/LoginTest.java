@@ -42,7 +42,7 @@ public class LoginTest extends CommonMethods {
                 {"James", "123!", "Invalid credentials"},
                 {"Admin1", "Syntax123!", "Invalid credentials"},
                 {"James", "", "Password cannot be empty"},
-                {"", "Syntax123!", "Username cannot be emptys"}
+                {"", "Syntax123!", "Username cannot be empty"}
         };
         return data;
     }
